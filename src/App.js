@@ -16,9 +16,11 @@ function App() {
   }
 
   return (
-    <div>
-      <AddPostForm addNewPost={addNewPost}/>
-      <DisplayPosts posts={posts}/>
+    <div className="container">
+      <div className="row">
+        <AddPostForm addNewPost={addNewPost}/>
+        <DisplayPosts posts={posts}/>
+      </div>
     </div>
   );
 }

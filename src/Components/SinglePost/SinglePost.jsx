@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SinglePost.css'
 
 const SinglePost = (props) => {
 
@@ -34,10 +35,12 @@ const SinglePost = (props) => {
             <p>{props.content}</p>
             <p>Liked status: {likedStatus.toString()}</p>
             <p>Disliked status: {dislikedStatus.toString()}</p>
-            <button className="bi bi-hand-thumbs-up" onClick={()=> setLikedStatus(!likedStatus), setDislikedStatus(false)}></button>
-            <button className="bi bi-hand-thumbs-down" onClick={()=> setDislikedStatus(!dislikedStatus), setLikedStatus(false)}></button>
+            <button className="btn px-1 btn-lg bi bi-hand-thumbs-up-fill" onClick={()=> setLikedStatus(!likedStatus)}></button>
+            <button className="btn px-1 btn-lg bi bi-hand-thumbs-down-fill" onClick={()=> setDislikedStatus(!dislikedStatus)}></button>
         </div>
     );
 }
  
+// className={"btn px-1 btn-lg bi bi-hand-thumbs-up " + (this.likedStatus ? "-fill text-primary" : "")}
+
 export default SinglePost;

@@ -1,16 +1,17 @@
 import React from 'react';
 
 const DisplayPosts = (props) => {
-    return ( 
-        {props.posts.map((post, index) => {
+    return (
+        props.posts.map((post) => {
             return (
-                <div className="container">
+              <div className="container">
                 <h5>{post.posterName}</h5>
                 <p>{post.content}</p>
-                </div>
-            );
-        })}
+                <button class="bi bi-hand-thumbs-up"></button>
+              </div>
+            )
+        })
     );
 }
- 
+    
 export default DisplayPosts;

@@ -7,10 +7,18 @@ function App() {
 
   const [posts, setPosts] = useState([{posterName: "Bob", content: "Hello World!"}]);
 
+  function addNewPost(post){
+
+    let tempPosts = [post, ...posts];
+
+    setPosts(tempPosts);
+    console.log("added!")
+  }
+
   return (
     <div>
+      <AddPostForm addNewPost={addNewPost}/>
       <DisplayPosts posts={posts}/>
-      <AddPostForm />
     </div>
   );
 }

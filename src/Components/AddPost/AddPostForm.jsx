@@ -8,10 +8,12 @@ const AddPostForm = (props) => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        let newEntry = {
+        let newPost = {
             posterName: posterName,
             content: content
         };
+        console.log("posted")
+        props.addNewPost(newPost);
     }
 
     return ( 

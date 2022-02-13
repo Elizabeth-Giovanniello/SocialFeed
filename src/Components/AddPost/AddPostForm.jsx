@@ -10,7 +10,8 @@ const AddPostForm = (props) => {
         event.preventDefault();
         let newPost = {
             posterName: posterName,
-            content: content
+            content: content,
+            date: new Date().toDateString()
         };
         console.log("posted")
         props.addNewPost(newPost);

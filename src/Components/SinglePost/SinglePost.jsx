@@ -30,11 +30,12 @@ const SinglePost = (props) => {
     return ( 
         <div className="container border rounded">
             <h5>{props.posterName}</h5>
+            <small className="text-muted">{props.date}</small>
             <p>{props.content}</p>
             <p>Liked status: {likedStatus.toString()}</p>
             <p>Disliked status: {dislikedStatus.toString()}</p>
-            <button className="bi bi-hand-thumbs-up" onClick={()=> setLikedStatus(!likedStatus)}></button>
-            <button className="bi bi-hand-thumbs-down" onClick={()=> setDislikedStatus(!dislikedStatus)}></button>
+            <button className="bi bi-hand-thumbs-up" onClick={()=> setLikedStatus(!likedStatus), setDislikedStatus(false)}></button>
+            <button className="bi bi-hand-thumbs-down" onClick={()=> setDislikedStatus(!dislikedStatus), setLikedStatus(false)}></button>
         </div>
     );
 }

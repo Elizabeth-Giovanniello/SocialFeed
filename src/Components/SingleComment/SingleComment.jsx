@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { Collapse } from "bootstrap";
-import DisplayComments from '../DisplayComments/DisplayComments';
-import './SinglePost.css'
 
-const SinglePost = (props) => {
+const SingleComment = (props) => {
 
     const [likedStatus, setLikedStatus] = useState(false);
     const [dislikedStatus, setDislikedStatus] = useState(false);
@@ -19,26 +16,20 @@ const SinglePost = (props) => {
     }
 
     return ( 
-        <div className="card shadow px-3 pt-3 mb-4 w-50 mx-auto">
-            <div className="card-header bg-white">
+        <div className="card px-3 pt-3 mb-4 mx-auto bg-light">
+            <div className="card-header bg-light">
                 <h5 className="m-0">{props.posterName}</h5>
-                <small className="text-muted">{props.date}</small>
             </div>
             <div className="card-body">
                 <p className="card-text">{props.content}</p>
             </div>
-            <div className="card-footer bg-white">
+            <div className="card-footer bg-light">
                 <button className={"btn px-1 btn-lg bi bi-hand-thumbs-up" + (likedStatus ? "-fill text-primary" : "")} onClick={()=> toggleLike()}></button>
                 <button className={"btn px-1 btn-lg bi bi-hand-thumbs-down" + (dislikedStatus ? "-fill text-primary" : "")} onClick={()=> toggleDislike()}></button>
-                <button type="button" className="btn btn-basic" data-bs-toggle="collapse" data-bs-target="#coment-section"><small className="text-muted ps-3">Comments</small></button>
+                <small className="text-muted ps-2">{props.date}</small>
             </div>
-                <div id="comment-section" className="collapse">
-                    <DisplayComments/>
-                </div>
         </div>
     );
 }
  
-{/* <div className="container border rounded px-5 pt-3 mb-4 w-50 shadow"></div> */}
-
-export default SinglePost;
+export default SingleComment;

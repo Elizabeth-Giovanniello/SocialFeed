@@ -21,7 +21,7 @@ const AddPostForm = (props) => {
     return ( 
         <div className="container border rounded mt-5 mb-5 p-4 w-50 shadow">
             <h5 className="text-center mb-3">Create Post</h5>
-            <form onSubmit={handleSubmit.bind(this)} className='form-grid'>
+            <form onSubmit={handleSubmit.bind(this)}>
                 <div className="form-group">
                     <input type="text" className='form-control' placeholder="Name" value={posterName} onChange={(event) => setPosterName(event.target.value)} required/>
                 </div>

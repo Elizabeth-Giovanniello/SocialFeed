@@ -5,7 +5,7 @@ import AddCommentForm from '../AddComment/AddCommentForm';
 
 const DisplayComments = (props) => {
 
-    const [comments, setComments] = useState([{commenterName: "Bob", commentText: "Your opinion is wrong.", date: new Date().toDateString()}]);
+    const [comments, setComments] = useState([]);
 
     function addNewComment(comment){
 

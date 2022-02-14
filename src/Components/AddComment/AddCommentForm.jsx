@@ -14,6 +14,7 @@ const AddCommentForm = (props) => {
         };
         console.log("posted")
         props.addNewComment(newComment);
+        setCommentText(''); //as with posts, clearing text only for better user experience
     }
 
     return ( 

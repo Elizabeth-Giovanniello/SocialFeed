@@ -13,15 +13,16 @@ const AddPostForm = (props) => {
             content: content,
             date: new Date().toDateString()
         };
-        console.log("posted")
         props.addNewPost(newPost);
-        event.target.reset();
+        setContent("");
+        console.log("posted") //clearing content only for better UX: likely your name won't change
     }
+
 
     return ( 
         <div className="container border rounded mt-5 mb-5 p-4 w-75 bg-white shadow-sm">
             <h5 className="text-center mb-3">Create Post</h5>
-            <form onSubmit={handleSubmit.bind(this)}>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <input type="text" className='form-control' placeholder="Name" value={posterName} onChange={(event) => setPosterName(event.target.value)} required/>
                 </div>

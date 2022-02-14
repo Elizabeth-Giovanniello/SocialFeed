@@ -16,9 +16,15 @@ function App() {
   }
 
   return (
+    <div className='container-fluid'>
+      <div className='row'>
+        <h3 className="text-primary" style={{margin: '1em'}}>Fake
+        <small className="text-muted">Book</small></h3>
+      </div>
     <div className="container">
-        <AddPostForm addNewPost={addNewPost}/>
-        <DisplayPosts posts={posts}/>
+      <AddPostForm addNewPost={addNewPost}/>
+      <DisplayPosts posts={posts}/>
+    </div>
     </div>
   );
 }

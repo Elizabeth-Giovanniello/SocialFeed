@@ -17,19 +17,21 @@ const AddCommentForm = (props) => {
     }
 
     return ( 
-        <div className="container rounded pb-3">
-            <form onSubmit={handleSubmit.bind(this)}>
-                <div className="form-group">
-                    <textarea className='form-control mb-2' placeholder="Write a comment..." value={commentText} onChange={(event) => setCommentText(event.target.value)} required></textarea>
-                </div>
+        <div className="container rounded pb-3 pt-3">
+            <form onSubmit={handleSubmit}>
             <div className="row">
                 <div className="col">
                     <div className="form-group">
                         <input type="text" className='form-control' placeholder="Name" value={commenterName} onChange={(event) => setCommenterName(event.target.value)} required/>
                     </div>
                 </div>
-                <div className="col-6">
-                    <button className="btn btn-primary bi bi-send float-end" type="submit">Comment</button>
+                <div className="col-7 px-0">
+                    <div className="form-group">
+                        <input type="text" className='form-control mb-2' placeholder="Write a comment..." value={commentText} onChange={(event) => setCommentText(event.target.value)} required/>
+                    </div>
+                </div>
+                <div className="col pe-0">
+                    <button className="btn btn-primary bi bi-send float-right" type="submit"> Comment</button>
                 </div>
             </div>
             </form>

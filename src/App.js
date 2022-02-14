@@ -5,7 +5,7 @@ import AddPostForm from './Components/AddPost/AddPostForm';
 
 function App() {
 
-  const [posts, setPosts] = useState([{posterName: "Bob", content: "Hello World!", date: "11/3/2021"}]);
+  const [posts, setPosts] = useState([{posterName: "Bob", content: "Hello World!", date: "Sun Feb 13 2022"}]);
 
   function addNewPost(post){
 

@@ -19,7 +19,7 @@ const AddPostForm = (props) => {
     }
 
     return ( 
-        <div className="container border rounded mt-5 mb-5 p-4 w-50 shadow">
+        <div className="container border rounded mt-5 mb-5 p-4 w-75 bg-white shadow-sm">
             <h5 className="text-center mb-3">Create Post</h5>
             <form onSubmit={handleSubmit.bind(this)}>
                 <div className="form-group">

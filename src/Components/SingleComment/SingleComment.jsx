@@ -16,16 +16,16 @@ const SingleComment = (props) => {
     }
 
     return ( 
-        <div className="card px-3 pt-3 mb-4 mx-auto bg-light">
-            <div className="card-header bg-light">
-                <h5 className="m-0">{props.posterName}</h5>
+        <div className="card pt-2 mb-4 mx-auto bg-light">
+            <div className="card-header bg-light border-0 pt-0">
+                <h5 className="m-0">{props.commenterName}</h5>
             </div>
-            <div className="card-body">
-                <p className="card-text">{props.content}</p>
+            <div className="card-body pb-1 pt-1">
+                <p className="card-text">{props.commentText}</p>
             </div>
-            <div className="card-footer bg-light">
-                <button className={"btn px-1 btn-lg bi bi-hand-thumbs-up" + (likedStatus ? "-fill text-primary" : "")} onClick={()=> toggleLike()}></button>
-                <button className={"btn px-1 btn-lg bi bi-hand-thumbs-down" + (dislikedStatus ? "-fill text-primary" : "")} onClick={()=> toggleDislike()}></button>
+            <div className="card-footer bg-light border-0 pt-0 pb-0">
+                <button className={"btn px-1 pt-0 btn-lg bi bi-hand-thumbs-up" + (likedStatus ? "-fill text-primary" : "")} onClick={()=> toggleLike()}></button>
+                <button className={"btn px-1 pt-0 btn-lg bi bi-hand-thumbs-down" + (dislikedStatus ? "-fill text-primary" : "")} onClick={()=> toggleDislike()}></button>
                 <small className="text-muted ps-2">{props.date}</small>
             </div>
         </div>

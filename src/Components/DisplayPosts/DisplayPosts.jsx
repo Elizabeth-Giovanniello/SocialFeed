@@ -8,7 +8,9 @@ const DisplayPosts = (props) => {
     return (
         props.posts.map((post) => {
             return (
-              <SinglePost posterName={post.posterName} content={post.content} date={post.date}/>
+                <div className="container">
+                    <SinglePost posterName={post.posterName} content={post.content} date={post.date}/>
+                </div>
             )
         })
     );

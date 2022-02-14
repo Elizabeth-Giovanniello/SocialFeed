@@ -6,41 +6,27 @@ const SinglePost = (props) => {
     const [likedStatus, setLikedStatus] = useState(false);
     const [dislikedStatus, setDislikedStatus] = useState(false);
 
-    // function toggleLike(){
-    //     if (likedStatus){
-    //         setLikedStatus(false);
-    //     }
-    //     else{
-    //         setLikedStatus(true);
-    //         setDislikedStatus(false);
-    //     }
-    //     console.log(`Liked status: ${likedStatus}/nDisliked status: ${dislikedStatus}`)
-    // }
+    function toggleLike(){
+        setLikedStatus(!likedStatus);
+        if(dislikedStatus){setDislikedStatus(false);}
+    }
 
-    // function toggleDislike(){
-    //     if (dislikedStatus){
-    //         setDislikedStatus(false);
-    //     }
-    //     else{
-    //         setDislikedStatus(true);
-    //         setLikedStatus(false);
-    //     }
-    //     console.log(`Liked status: ${likedStatus}/nDisliked status: ${dislikedStatus}`)
-    // }
+    function toggleDislike(){
+        setDislikedStatus(!dislikedStatus);
+        if(likedStatus){setLikedStatus(false);}
+    }
 
     return ( 
-        <div className="container border rounded">
+        <div className="container border rounded px-5 pt-3 mb-4">
             <h5>{props.posterName}</h5>
             <small className="text-muted">{props.date}</small>
             <p>{props.content}</p>
-            <p>Liked status: {likedStatus.toString()}</p>
-            <p>Disliked status: {dislikedStatus.toString()}</p>
-            <button className="btn px-1 btn-lg bi bi-hand-thumbs-up-fill" onClick={()=> setLikedStatus(!likedStatus)}></button>
-            <button className="btn px-1 btn-lg bi bi-hand-thumbs-down-fill" onClick={()=> setDislikedStatus(!dislikedStatus)}></button>
+            <button className={"btn px-1 btn-lg bi bi-hand-thumbs-up" + (likedStatus ? "-fill text-primary" : "")} onClick={()=> toggleLike()}></button>
+            <button className={"btn px-1 btn-lg bi bi-hand-thumbs-down" + (dislikedStatus ? "-fill text-primary" : "")} onClick={()=> toggleDislike()}></button>
         </div>
     );
 }
  
-// className={"btn px-1 btn-lg bi bi-hand-thumbs-up " + (this.likedStatus ? "-fill text-primary" : "")}
+
 
 export default SinglePost;

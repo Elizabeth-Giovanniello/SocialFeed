@@ -23,10 +23,10 @@ const AddPostForm = (props) => {
             <h5 className="text-center mb-3">Create Post</h5>
             <form onSubmit={handleSubmit.bind(this)} className='form-grid'>
                 <div className="form-group">
-                    <input type="text" className='form-control' placeholder="Name" value={posterName} onChange={(event) => setPosterName(event.target.value)}/>
+                    <input type="text" className='form-control' placeholder="Name" value={posterName} onChange={(event) => setPosterName(event.target.value)} required/>
                 </div>
                 <div className="form-group">
-                    <textarea className='form-control mt-2' placeholder="What's on your mind?" value={content} onChange={(event) => setContent(event.target.value)}></textarea>
+                    <textarea className='form-control mt-2' placeholder="What's on your mind?" value={content} onChange={(event) => setContent(event.target.value)} required></textarea>
                 </div>
                 <button className="btn btn-primary mt-2 px-4" type="submit">Post</button>
             </form>
